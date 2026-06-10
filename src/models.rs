@@ -42,3 +42,8 @@ pub struct SentFileDetails {
     pub expiration_date: Option<DateTime<Utc>>,
     pub created_at: Option<DateTime<Utc>>
 }
+
+#[derive(sqlx::FromRow)]
+pub struct ReceiveFileDetails {
+    
+}
