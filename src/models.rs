@@ -18,4 +18,7 @@ pub struct File {
     pub user_id: Option<uuid::Uuid>,
     pub file_name: String,
     pub file_size: i64,
+    pub encrypted_aes_key: Vec<u8>,
+    pub encrypted_file: Vec<u8>,
+    pub iv: Vec<u8>,
 }
