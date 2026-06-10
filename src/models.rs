@@ -23,3 +23,8 @@ pub struct File {
     pub iv: Vec<u8>,
     pub created_at: Option<DateTime<Utc>>,
 }
+
+#[derive(Debug, Clone, Deserialize, Serialize, sqlx::FromRow, sqlx::Type)]
+pub struct SharedLink {
+    
+}
