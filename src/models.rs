@@ -30,5 +30,6 @@ pub struct SharedLink {
     pub file_id: Option<uuid::Uuid>,
     pub recipient_user_id: Option<uuid::Uuid>,
     pub password: String,
-    pub expiration_date: Option<DateTime<Utc>>
+    pub expiration_date: Option<DateTime<Utc>>,
+    pub created_at: Option<DateTime<Utc>>,
 }
