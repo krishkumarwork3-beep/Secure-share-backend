@@ -21,4 +21,5 @@ pub struct File {
     pub encrypted_aes_key: Vec<u8>,
     pub encrypted_file: Vec<u8>,
     pub iv: Vec<u8>,
+    pub created_at: Option<DateTime<Utc>>,
 }
