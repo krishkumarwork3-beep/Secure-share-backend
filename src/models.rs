@@ -36,5 +36,9 @@ pub struct SharedLink {
 
 #[derive(sqlx::FromRow)]
 pub struct SentFileDetails {
-    
+    pub file_id: uuid::Uuid,
+    pub file_name: String,
+    pub recipient_email: String,
+    pub expiration_date: Option<DateTime<Utc>>,
+    pub created_at: Option<DateTime<Utc>>
 }
