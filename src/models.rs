@@ -14,5 +14,8 @@ pub struct User {
 
 #[derive(Debug, Clone, Deserialize, Serialize, sqlx::FromRow, sqlx::Type)]
 pub struct File {
-    
+    pub id: uuid::Uuid,
+    pub user_id: Option<uuid::Uuid>,
+    pub file_name: String,
+    pub file_size: i64,
 }
