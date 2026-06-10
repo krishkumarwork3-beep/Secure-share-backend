@@ -7,5 +7,6 @@ pub struct User {
     pub name: String,
     pub email: String,
     pub password: String,
-   
+    pub public_key: Option<String>,
+  
 }
