@@ -5,3 +5,11 @@ pub struct Config {
     pub jwt_maxage: i64,
     pub port: u16,
 }
+
+impl Config {
+
+    pub fn init() -> Config {
+        
+    }
+    
+}
