@@ -11,3 +11,8 @@ pub struct User {
     pub created_at: Option<DateTime<Utc>>,
     pub updated_at: Option<DateTime<Utc>>,
 }
+
+#[derive(Debug, Clone, Deserialize, Serialize, sqlx::FromRow, sqlx::Type)]
+pub struct File {
+    
+}
