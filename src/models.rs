@@ -33,3 +33,8 @@ pub struct SharedLink {
     pub expiration_date: Option<DateTime<Utc>>,
     pub created_at: Option<DateTime<Utc>>,
 }
+
+#[derive(sqlx::FromRow)]
+pub struct SentFileDetails {
+    
+}
