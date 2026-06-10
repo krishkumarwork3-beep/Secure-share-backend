@@ -12,3 +12,15 @@ CREATE TABLE users (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+-- Files table
+CREATE TABLE files (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    user_id UUID REFERENCES users(id) ON DELETE CASCADE,  -- Foreign key to users table
+    file_name VARCHAR(255) NOT NULL,
+    file_size BIGINT NOT NULL,
+    encrypted_aes_key BYTEA NOT NULL,  -- Store encrypted AES key
+    encrypted_file BYTEA NOT NULL,     -- Store the actual encrypted file content
+    iv BYTEA NOT NULL,                 -- Initialization vector for AES encryption
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
