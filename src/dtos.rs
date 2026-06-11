@@ -111,5 +111,5 @@ impl UserSendFileDto {
 pub struct UserSendFileListResponseDto {
     pub status: String,
     pub files: Vec<UserSendFileDto>,
-   
+    pub results: i64,
 }
