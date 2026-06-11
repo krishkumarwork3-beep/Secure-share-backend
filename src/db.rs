@@ -54,6 +54,7 @@ pub trait UserExt {
         user_id: Uuid,
         file_name: String,
         file_size: i64,
+        recipient_user_id: Uuid,
 
     ) ;
 
