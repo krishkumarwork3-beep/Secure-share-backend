@@ -34,6 +34,7 @@ pub trait UserExt {
 
     async fn update_user_name<T: Into<String> + Send>(
         &self,
+        user_id: Uuid,
 
     );
 }
