@@ -85,6 +85,6 @@ pub trait UserExt {
         user_id: Uuid,
         page: u32,
         limit: usize
-    ) ;
+    ) -> Result<(Vec<ReceiveFileDetails>, i64), sqlx::Error>;
 
 }
