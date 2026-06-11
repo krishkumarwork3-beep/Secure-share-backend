@@ -20,5 +20,10 @@ pub struct RegisterUserDto {
     )]
     pub password: String,
 
-    
+    #[validate(
+        length(min = 1, message = "Confirm Password is required"),
+        must_match(other = "password", message="passwords do not match")
+    )]
+   
+    pub password_confirm: String,
 }
