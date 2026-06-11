@@ -41,5 +41,7 @@ pub struct LoginUserDto {
 
 #[derive(Serialize, Deserialize, Validate)]
 pub struct RequestQueryDto {
-    
+    #[validate(range(min = 1))]
+    pub page: Option<usize>,
+   
 }
