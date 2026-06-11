@@ -64,6 +64,7 @@ pub trait UserExt {
 
     async fn get_shared(
         &self,
+        shared_id: Uuid,
 
     ) ;
 }
