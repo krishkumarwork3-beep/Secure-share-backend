@@ -152,3 +152,5 @@ pub struct UserLoginResponseDto {
     pub status: String,
     pub token: String,
 }
+
+#[derive(Serialize, Deserialize)]
