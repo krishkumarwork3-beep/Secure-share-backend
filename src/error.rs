@@ -23,5 +23,6 @@ pub enum ErrorMessage {
     ExceededMaxPasswordLength(usize),
     InvalidHashFormat,
     HashingError,
-
+    InvalidToken,
+    
 }
