@@ -53,3 +53,6 @@ impl ErrorMessage {
 }
 
 #[derive(Debug, Clone)]
+pub struct HttpError {
+
+}
