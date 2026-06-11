@@ -27,3 +27,8 @@ pub struct RegisterUserDto {
     #[serde(rename = "passwordConfirm")]
     pub password_confirm: String,
 }
+
+#[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
+pub struct LoginUserDto {
+    
+}
