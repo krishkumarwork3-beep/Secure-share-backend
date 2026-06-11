@@ -44,6 +44,7 @@ impl ErrorMessage {
             ErrorMessage::UserNoLongerExist => "User belonging to this token no longer exists".to_string(),
             ErrorMessage::EmptyPassword => "Password cannot be empty".to_string(),
             ErrorMessage::HashingError => "Error while hashing password".to_string(),
+            ErrorMessage::InvalidHashFormat => "Invalid password hash format".to_string(),
             
         }
     }
