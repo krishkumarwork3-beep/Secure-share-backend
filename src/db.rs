@@ -72,4 +72,9 @@ pub trait UserExt {
         &self,
         file_id: Uuid,
     ) -> Result<Option<File>, sqlx::Error>;
+
+    async fn get_sent_files(
+        &self,
+
+    ) ;
 }
