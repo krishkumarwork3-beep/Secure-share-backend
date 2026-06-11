@@ -73,5 +73,9 @@ impl HttpError {
         }
     }
 
+    pub fn bad_request(message: impl Into<String>) -> Self {
+        
+    }
+
     
 }
