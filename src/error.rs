@@ -103,3 +103,7 @@ impl HttpError {
         (self.status, json_response).into_response()
     }
 }
+
+impl fmt::Display for HttpError {
+    
+}
