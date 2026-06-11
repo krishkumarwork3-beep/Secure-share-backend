@@ -89,5 +89,5 @@ pub trait UserExt {
 
     async fn delete_expired_files(
         &self
-    ) ;
+    ) -> Result<(), sqlx::Error>;
 }
