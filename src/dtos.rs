@@ -261,5 +261,9 @@ pub struct RetrieveFileDto {
     #[validate(length(min = 1, message = "Shared id is required"))]
     pub shared_id: String,
 
-    
+    #[validate(
+        length(min = 1, message = "Password is required."),
+        
+    )]
+
 }
