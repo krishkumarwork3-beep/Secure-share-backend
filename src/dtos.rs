@@ -171,5 +171,7 @@ pub struct UserPasswordUpdateDto {
         length(min = 1, message = "New password is required."),
         length(min = 6, message = "new password must be at least 6 characters")
     )]
+    pub new_password: String,
+
     
 }
