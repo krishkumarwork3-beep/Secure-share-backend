@@ -241,7 +241,8 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
     let parsed_date = DateTime::parse_from_rfc3339(expiration_date)
     .map_err(|_| {
         let mut error = ValidationError::new("invalid_date_format");
-        
+        error.message = Some("Invalid date format. Expected format is YYYY-MM-DDTHH:MM:SS.ssssssZ.".into());
+        error
     })?;
 
     
