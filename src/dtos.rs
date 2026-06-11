@@ -180,5 +180,9 @@ pub struct UserPasswordUpdateDto {
     )]
     pub new_password_confirm: String,
 
-    
+    #[validate(
+        length(min = 1, message = "Old password is required."),
+ 
+    )]
+
 }
