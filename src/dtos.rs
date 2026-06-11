@@ -92,7 +92,10 @@ pub struct UserSendFileDto {
 
 impl UserSendFileDto {
     pub fn filter_send_user_file(file_data: &SentFileDetails) -> Self {
-        
+        UserSendFileDto {
+            file_id: file_data.file_id.to_string(),
+            
+        }
     }
 
     
