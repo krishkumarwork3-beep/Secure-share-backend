@@ -219,5 +219,7 @@ pub struct EmailListResponseDto {
 #[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
 pub struct FileUploadDtos {
     #[validate(email(message = "Invalid email format"))]
+    pub recipient_email: String,
+
     
 }
