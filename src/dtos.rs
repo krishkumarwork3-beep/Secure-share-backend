@@ -197,3 +197,7 @@ pub struct SearchQueryByEmailDTO {
 pub struct FilterEmailDto {
     pub email: String,
 }
+
+impl FilterEmailDto {
+    
+}
