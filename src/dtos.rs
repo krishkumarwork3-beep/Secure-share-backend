@@ -105,3 +105,6 @@ impl UserSendFileDto {
         user.iter().map(UserSendFileDto::filter_send_user_file).collect()
     }
 }
+
+
+#[derive(Debug, Serialize, Deserialize)]
