@@ -23,5 +23,5 @@ pub trait UserExt {
         user_id: Option<Uuid>,
         name: Option<&str>,
         email: Option<&str>,
-    ) ;
+    ) -> Result<Option<User>, sqlx::Error>;
 }
