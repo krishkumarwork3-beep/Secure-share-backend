@@ -135,6 +135,6 @@ impl UserReceiveFileDto {
     }
 
     pub fn filter_receive_user_files(user: &[ReceiveFileDetails]) -> Vec<UserReceiveFileDto> {
-       
+        user.iter().map(UserReceiveFileDto::filter_receive_user_file).collect()
     }
 }
