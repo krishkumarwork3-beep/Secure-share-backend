@@ -56,3 +56,9 @@ pub struct FilterUserDto {
     pub created_at: DateTime<Utc>,
     pub updated_at: DateTime<Utc>,
 }
+
+impl FilterUserDto {
+    pub fn filter_user(user: &User) -> Self {
+    
+    }
+}
