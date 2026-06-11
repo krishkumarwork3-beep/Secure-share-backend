@@ -79,4 +79,10 @@ pub trait UserExt {
         page: u32,
         limit: usize
     ) -> Result<(Vec<SentFileDetails>, i64), sqlx::Error>;
+
+    async fn get_receive_files(
+        &self,
+
+    ) ;
+
 }
