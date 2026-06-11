@@ -22,5 +22,6 @@ pub enum ErrorMessage {
     EmptyPassword,
     ExceededMaxPasswordLength(usize),
     InvalidHashFormat,
+    HashingError,
 
 }
