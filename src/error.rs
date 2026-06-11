@@ -10,3 +10,7 @@ pub struct ErrorResponse {
     pub status: String,
     pub message: String,
 }
+
+impl fmt::Display for ErrorResponse {
+    
+}
