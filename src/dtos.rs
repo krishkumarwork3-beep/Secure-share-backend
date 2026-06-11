@@ -50,5 +50,6 @@ pub struct RequestQueryDto {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FilterUserDto {
     pub id: String,
+    pub name: String,
     
 }
