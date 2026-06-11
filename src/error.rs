@@ -35,3 +35,7 @@ impl ToString for ErrorMessage {
         self.to_str().to_owned()
     }
 }
+
+impl ErrorMessage {
+    
+}
