@@ -142,5 +142,6 @@ impl UserReceiveFileDto {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserReceiveFileListResponseDto {
+    pub status: String,
     
 }
