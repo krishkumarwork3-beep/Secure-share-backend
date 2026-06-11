@@ -38,3 +38,8 @@ pub struct LoginUserDto {
     )]
     pub password: String,
 }
+
+#[derive(Serialize, Deserialize, Validate)]
+pub struct RequestQueryDto {
+    
+}
