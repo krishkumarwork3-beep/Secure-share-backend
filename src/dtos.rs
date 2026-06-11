@@ -265,5 +265,5 @@ pub struct RetrieveFileDto {
         length(min = 1, message = "Password is required."),
         length(min = 6, message = "Password must be at least 6 characters")
     )]
-
+    pub password: String,
 }
