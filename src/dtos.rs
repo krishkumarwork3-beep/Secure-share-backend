@@ -52,5 +52,6 @@ pub struct FilterUserDto {
     pub id: String,
     pub name: String,
     pub email: String,
-    
+    pub public_key: Option<String>,
+   
 }
