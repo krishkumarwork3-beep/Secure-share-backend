@@ -15,3 +15,5 @@ impl DBClient {
         DBClient { pool }
     }
 }
+
+#[async_trait]
