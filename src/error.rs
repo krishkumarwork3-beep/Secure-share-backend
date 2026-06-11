@@ -57,3 +57,7 @@ pub struct HttpError {
     pub message: String,
     pub status: StatusCode,
 }
+
+impl HttpError {
+    
+}
