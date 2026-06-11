@@ -253,5 +253,5 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
         return Err(error);
     }
 
-
+    Ok(())
 }
