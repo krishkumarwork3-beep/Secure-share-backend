@@ -67,4 +67,9 @@ pub trait UserExt {
         shared_id: Uuid,
         user_id: Uuid,
     ) -> Result<Option<SharedLink>, sqlx::Error>;
+
+    async fn get_file(
+        &self,
+  
+    ) ;
 }
