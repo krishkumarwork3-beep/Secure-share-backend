@@ -195,5 +195,5 @@ pub struct SearchQueryByEmailDTO {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct FilterEmailDto {
-
+    pub email: String,
 }
