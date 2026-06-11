@@ -24,5 +24,6 @@ pub enum ErrorMessage {
     InvalidHashFormat,
     HashingError,
     InvalidToken,
-    
+    WrongCredentials,
+
 }
