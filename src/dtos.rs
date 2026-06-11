@@ -154,3 +154,6 @@ pub struct UserLoginResponseDto {
 }
 
 #[derive(Serialize, Deserialize)]
+pub struct Response {
+    
+}
