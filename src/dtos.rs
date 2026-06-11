@@ -96,7 +96,7 @@ impl UserSendFileDto {
             file_id: file_data.file_id.to_string(),
             file_name: file_data.file_name.to_owned(),
             recipient_email: file_data.recipient_email.to_owned(),
-           
+            expiration_date: file_data.expiration_date.unwrap(),
         }
     }
 
