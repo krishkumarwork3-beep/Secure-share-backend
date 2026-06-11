@@ -77,6 +77,6 @@ pub trait UserExt {
         &self,
         user_id: Uuid,
         page: u32,
-
+        limit: usize
     ) ;
 }
