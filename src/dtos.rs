@@ -215,3 +215,5 @@ pub struct EmailListResponseDto {
     pub status: String,
     pub emails: Vec<FilterEmailDto>,
 }
+
+#[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
