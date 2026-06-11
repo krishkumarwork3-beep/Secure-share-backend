@@ -29,6 +29,6 @@ pub trait UserExt {
         &self,
         name: T,
         email: T,
-
+        password: T,
     ) ;
 }
