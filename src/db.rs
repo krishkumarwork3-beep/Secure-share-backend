@@ -66,5 +66,5 @@ pub trait UserExt {
         &self,
         shared_id: Uuid,
         user_id: Uuid,
-    ) ;
+    ) -> Result<Option<SharedLink>, sqlx::Error>;
 }
