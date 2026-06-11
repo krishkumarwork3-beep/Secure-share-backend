@@ -47,7 +47,7 @@ impl ErrorMessage {
             ErrorMessage::InvalidHashFormat => "Invalid password hash format".to_string(),
             ErrorMessage::ExceededMaxPasswordLength(max_length) => format!("Password must not be more than {} characters", max_length),
             ErrorMessage::InvalidToken => "Authentication token is invalid or expired".to_string(),
-
+            ErrorMessage::TokenNotProvided => "You are not logged in, please provide a token".to_string(),
         }
     }
 }
