@@ -164,3 +164,5 @@ pub struct NameUpdateDto {
     #[validate(length(min = 1, message = "Name is required"))]
     pub name: String,
 }
+
+#[derive(Debug, Validate, Default, Clone, Serialize, Deserialize)]
