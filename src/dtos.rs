@@ -209,3 +209,5 @@ impl FilterEmailDto {
         user.iter().map(FilterEmailDto::filter_email).collect()
     }
 }
+
+#[derive(Debug, Serialize, Deserialize)]
