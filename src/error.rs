@@ -45,7 +45,7 @@ impl ErrorMessage {
             ErrorMessage::EmptyPassword => "Password cannot be empty".to_string(),
             ErrorMessage::HashingError => "Error while hashing password".to_string(),
             ErrorMessage::InvalidHashFormat => "Invalid password hash format".to_string(),
-            
+            ErrorMessage::ExceededMaxPasswordLength(max_length) 
         }
     }
 }
