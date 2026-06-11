@@ -9,5 +9,10 @@ use crate::models::{ReceiveFileDetails, SentFileDetails, User};
 pub struct RegisterUserDto {
     #[validate(length(min = 1, message = "Name is required"))]
     pub name: String,
+    #[validate(
+        length(min = 1, message = "Email is required"),
+        email(message = "Email is invalid")
+    )]
+    pub email: String,
     
 }
