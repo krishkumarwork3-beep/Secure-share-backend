@@ -66,5 +66,9 @@ impl HttpError {
         }
     }
 
+    pub fn server_error(message: impl Into<String>) -> Self {
+        
+    }
+
     
 }
