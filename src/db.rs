@@ -62,4 +62,8 @@ pub trait UserExt {
         iv: Vec<u8>,
     ) -> Result<(), sqlx::Error>;
 
+    async fn get_shared(
+        &self,
+
+    ) ;
 }
