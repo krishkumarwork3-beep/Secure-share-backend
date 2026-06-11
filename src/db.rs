@@ -18,5 +18,8 @@ impl DBClient {
 
 #[async_trait]
 pub trait UserExt {
+    async fn get_user(
+        &self,
 
+    ) ;
 }
