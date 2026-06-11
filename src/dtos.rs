@@ -24,6 +24,6 @@ pub struct RegisterUserDto {
         length(min = 1, message = "Confirm Password is required"),
         must_match(other = "password", message="passwords do not match")
     )]
-   
+    #[serde(rename = "passwordConfirm")]
     pub password_confirm: String,
 }
