@@ -228,5 +228,5 @@ pub struct FileUploadDtos {
     pub password: String,
 
     #[validate(custom = "validate_expiration_date")]
-
+    pub expiration_date: String,
 }
