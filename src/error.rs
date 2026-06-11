@@ -41,6 +41,7 @@ impl ErrorMessage {
         match self {
             ErrorMessage::WrongCredentials => "Email or password is wrong".to_string(),
             ErrorMessage::EmailExist => "A user with this email already exists".to_string(),
+            ErrorMessage::UserNoLongerExist => "User belonging to this token no longer exists".to_string(),
             
         }
     }
