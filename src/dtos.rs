@@ -128,6 +128,7 @@ impl UserReceiveFileDto {
         UserReceiveFileDto {
             file_id: file_data.file_id.to_string(),
             file_name: file_data.file_name.to_owned(),
+            sender_email: file_data.sender_email.to_owned(),
             
         }
     }
