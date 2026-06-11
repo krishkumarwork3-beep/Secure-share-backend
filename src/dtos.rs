@@ -101,5 +101,7 @@ impl UserSendFileDto {
         }
     }
 
-    
+    pub fn filter_send_user_files(user: &[SentFileDetails]) -> Vec<UserSendFileDto> {
+       
+    }
 }
