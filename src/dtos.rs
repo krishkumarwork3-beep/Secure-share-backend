@@ -249,7 +249,8 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
 
     if parsed_date <= now {
         let mut error = ValidationError::new("expiration_date_future");
-
+        error.message = Some("Expiration date must be in the future.".into());
+        return Err(error);
     }
 
 
