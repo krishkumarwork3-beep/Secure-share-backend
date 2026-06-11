@@ -91,3 +91,8 @@ pub trait UserExt {
         &self
     ) -> Result<(), sqlx::Error>;
 }
+
+#[async_trait]
+impl UserExt for DBClient {
+    
+}
