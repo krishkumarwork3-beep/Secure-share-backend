@@ -31,5 +31,7 @@ pub enum ErrorMessage {
 }
 
 impl ToString for ErrorMessage {
-    
+    fn to_string(&self) -> String {
+
+    }
 }
