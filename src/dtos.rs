@@ -230,3 +230,7 @@ pub struct FileUploadDtos {
     #[validate(custom = "validate_expiration_date")]
     pub expiration_date: String,
 }
+
+fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError> {
+    
+}
