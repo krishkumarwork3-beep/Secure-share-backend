@@ -109,5 +109,6 @@ impl UserSendFileDto {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserSendFileListResponseDto {
-   
+    pub status: String,
+    
 }
