@@ -38,6 +38,8 @@ impl ToString for ErrorMessage {
 
 impl ErrorMessage {
     fn to_str(&self) -> String {
-        
+        match self {
+            
+        }
     }
 }
