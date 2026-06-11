@@ -182,7 +182,7 @@ pub struct UserPasswordUpdateDto {
 
     #[validate(
         length(min = 1, message = "Old password is required."),
- 
+        length(min = 6, message = "Old password must be at least 6 characters")
     )]
 
 }
