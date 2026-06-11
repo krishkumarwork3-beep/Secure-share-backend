@@ -158,3 +158,6 @@ pub struct Response {
     pub status: &'static str,
     pub message: String,
 }
+
+#[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
+
