@@ -24,4 +24,9 @@ pub trait UserExt {
         name: Option<&str>,
         email: Option<&str>,
     ) -> Result<Option<User>, sqlx::Error>;
+
+    async fn save_user<T: Into<String> + Send>(
+        &self,
+        
+    ) ;
 }
