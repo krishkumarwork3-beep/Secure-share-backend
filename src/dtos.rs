@@ -124,5 +124,9 @@ pub struct UserReceiveFileDto {
 }
 
 impl UserReceiveFileDto {
-    
+    pub fn filter_receive_user_file(file_data: &ReceiveFileDetails) -> Self {
+        
+    }
+
+   
 }
