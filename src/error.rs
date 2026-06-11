@@ -67,7 +67,10 @@ impl HttpError {
     }
 
     pub fn server_error(message: impl Into<String>) -> Self {
-        
+        HttpError {
+            message: message.into(),
+            status: StatusCode::INTERNAL_SERVER_ERROR,
+        }
     }
 
     
