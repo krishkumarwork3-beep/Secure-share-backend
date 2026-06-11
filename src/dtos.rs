@@ -192,3 +192,5 @@ pub struct SearchQueryByEmailDTO {
     #[validate(length(min = 1, message = "Query is requireed"))]
     pub query: String,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
