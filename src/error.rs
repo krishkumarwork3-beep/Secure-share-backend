@@ -51,3 +51,5 @@ impl ErrorMessage {
         }
     }
 }
+
+#[derive(Debug, Clone)]
