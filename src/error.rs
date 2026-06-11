@@ -21,5 +21,6 @@ impl fmt::Display for ErrorResponse {
 pub enum ErrorMessage {
     EmptyPassword,
     ExceededMaxPasswordLength(usize),
+    InvalidHashFormat,
 
 }
