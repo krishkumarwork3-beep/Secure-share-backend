@@ -178,5 +178,7 @@ pub struct UserPasswordUpdateDto {
         length(min = 6, message = "new password confirm must be at least 6 characters"),
         must_match(other = "new_password", message="new passwords do not match")
     )]
+    pub new_password_confirm: String,
+
     
 }
