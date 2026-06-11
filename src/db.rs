@@ -46,6 +46,6 @@ pub trait UserExt {
 
     async fn save_user_key(&self, user_id: Uuid, public_key: String) -> Result<(), sqlx::Error>;
 
-    async fn search_by_email(&self, user_id: Uuid)
+    async fn search_by_email(&self, user_id: Uuid, query: String)
         ;
 }
