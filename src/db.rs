@@ -36,5 +36,5 @@ pub trait UserExt {
         &self,
         user_id: Uuid,
         name: T,
-    );
+    ) -> Result<User, sqlx::Error>;
 }
