@@ -255,3 +255,5 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
 
     Ok(())
 }
+
+#[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
