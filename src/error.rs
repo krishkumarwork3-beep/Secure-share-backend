@@ -40,6 +40,7 @@ impl ErrorMessage {
     fn to_str(&self) -> String {
         match self {
             ErrorMessage::WrongCredentials => "Email or password is wrong".to_string(),
+            ErrorMessage::EmailExist => "A user with this email already exists".to_string(),
             
         }
     }
