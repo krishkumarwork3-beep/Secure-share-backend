@@ -41,7 +41,7 @@ pub trait UserExt {
     async fn update_user_password(
         &self,
         user_id: Uuid,
-
+        password: String,
     ) ;
 
 }
