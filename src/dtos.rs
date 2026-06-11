@@ -245,5 +245,7 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
         error
     })?;
 
+    let now = Utc::now();
+
     
 }
