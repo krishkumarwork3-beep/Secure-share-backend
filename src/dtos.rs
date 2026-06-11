@@ -85,5 +85,6 @@ pub struct UserResponseDto {
 pub struct UserSendFileDto {
     pub file_id: String,
     pub file_name: String,
-   
+    pub recipient_email: String,
+    
 }
