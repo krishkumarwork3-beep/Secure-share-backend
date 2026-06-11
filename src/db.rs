@@ -11,5 +11,7 @@ pub struct DBClient {
 }
 
 impl DBClient {
-    
+    pub fn new(pool: Pool<Postgres>) -> Self {
+
+    }
 }
