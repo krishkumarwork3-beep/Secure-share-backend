@@ -217,3 +217,6 @@ pub struct EmailListResponseDto {
 }
 
 #[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
+pub struct FileUploadDtos {
+    
+}
