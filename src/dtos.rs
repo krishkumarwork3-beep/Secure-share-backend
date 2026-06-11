@@ -115,3 +115,6 @@ pub struct UserSendFileListResponseDto {
 }
 
 #[derive(Debug, Serialize, Deserialize)]
+pub struct UserReceiveFileDto {
+    
+}
