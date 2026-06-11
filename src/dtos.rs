@@ -176,7 +176,7 @@ pub struct UserPasswordUpdateDto {
     #[validate(
         length(min = 1, message = "New password confirm is required."),
         length(min = 6, message = "new password confirm must be at least 6 characters"),
-        
+        must_match(other = "new_password", message="new passwords do not match")
     )]
     
 }
