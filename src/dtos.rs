@@ -122,3 +122,7 @@ pub struct UserReceiveFileDto {
     pub expiration_date: DateTime<Utc>,
     pub created_at: DateTime<Utc>,
 }
+
+impl UserReceiveFileDto {
+    
+}
