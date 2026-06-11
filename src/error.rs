@@ -29,3 +29,7 @@ pub enum ErrorMessage {
     UserNoLongerExist,
     TokenNotProvided,
 }
+
+impl ToString for ErrorMessage {
+    
+}
