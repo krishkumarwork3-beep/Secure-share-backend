@@ -84,5 +84,6 @@ pub struct UserResponseDto {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserSendFileDto {
     pub file_id: String,
+    pub file_name: String,
    
 }
