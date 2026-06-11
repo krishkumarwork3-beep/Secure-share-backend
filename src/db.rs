@@ -22,6 +22,6 @@ pub trait UserExt {
         &self,
         user_id: Option<Uuid>,
         name: Option<&str>,
-
+        email: Option<&str>,
     ) ;
 }
