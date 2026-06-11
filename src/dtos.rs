@@ -212,5 +212,6 @@ impl FilterEmailDto {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct EmailListResponseDto {
+    pub status: String,
 
 }
