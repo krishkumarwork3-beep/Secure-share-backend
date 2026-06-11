@@ -117,5 +117,6 @@ pub struct UserSendFileListResponseDto {
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserReceiveFileDto {
     pub file_id: String,
+    pub file_name: String,
     
 }
