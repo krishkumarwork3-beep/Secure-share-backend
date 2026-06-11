@@ -205,5 +205,7 @@ impl FilterEmailDto {
         }
     }
 
-    
+    pub fn filter_emails(user: &[User]) -> Vec<FilterEmailDto> {
+       
+    }
 }
