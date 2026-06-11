@@ -59,6 +59,9 @@ pub struct FilterUserDto {
 
 impl FilterUserDto {
     pub fn filter_user(user: &User) -> Self {
-    
+        FilterUserDto {
+            id: user.id.to_string(),
+            
+        }
     }
 }
