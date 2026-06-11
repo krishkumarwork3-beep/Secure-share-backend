@@ -12,5 +12,7 @@ pub struct ErrorResponse {
 }
 
 impl fmt::Display for ErrorResponse {
-    
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+
+    }
 }
