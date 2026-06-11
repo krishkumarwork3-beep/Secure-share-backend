@@ -4,3 +4,6 @@ use sqlx::{Pool, Postgres};
 use uuid::Uuid;
 
 use crate::models::{File, ReceiveFileDetails, SentFileDetails, SharedLink, User};
+
+#[derive(Debug, Clone)]
+
