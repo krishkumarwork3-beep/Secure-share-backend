@@ -31,4 +31,9 @@ pub trait UserExt {
         email: T,
         password: T,
     ) -> Result<User, sqlx::Error>;
+
+    async fn update_user_name<T: Into<String> + Send>(
+        &self,
+
+    );
 }
