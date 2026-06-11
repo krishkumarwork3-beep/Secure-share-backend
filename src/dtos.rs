@@ -167,5 +167,9 @@ pub struct NameUpdateDto {
 
 #[derive(Debug, Validate, Default, Clone, Serialize, Deserialize)]
 pub struct UserPasswordUpdateDto {
+    #[validate(
+        length(min = 1, message = "New password is required."),
+        
+    )]
     
 }
