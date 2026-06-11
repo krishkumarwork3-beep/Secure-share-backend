@@ -39,6 +39,7 @@ impl ToString for ErrorMessage {
 impl ErrorMessage {
     fn to_str(&self) -> String {
         match self {
+            ErrorMessage::WrongCredentials => "Email or password is wrong".to_string(),
             
         }
     }
