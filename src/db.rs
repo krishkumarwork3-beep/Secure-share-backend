@@ -9,3 +9,7 @@ use crate::models::{File, ReceiveFileDetails, SentFileDetails, SharedLink, User}
 pub struct DBClient {
     pool: Pool<Postgres>,
 }
+
+impl DBClient {
+    
+}
