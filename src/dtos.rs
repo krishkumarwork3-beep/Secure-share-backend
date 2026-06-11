@@ -206,6 +206,6 @@ impl FilterEmailDto {
     }
 
     pub fn filter_emails(user: &[User]) -> Vec<FilterEmailDto> {
-       
+        user.iter().map(FilterEmailDto::filter_email).collect()
     }
 }
