@@ -6,4 +6,5 @@ use uuid::Uuid;
 use crate::models::{File, ReceiveFileDetails, SentFileDetails, SharedLink, User};
 
 #[derive(Debug, Clone)]
-
+pub struct DBClient {
+}
