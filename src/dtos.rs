@@ -120,5 +120,5 @@ pub struct UserReceiveFileDto {
     pub file_name: String,
     pub sender_email: String,
     pub expiration_date: DateTime<Utc>,
-  
+    pub created_at: DateTime<Utc>,
 }
