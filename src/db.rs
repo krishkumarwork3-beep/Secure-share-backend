@@ -27,6 +27,7 @@ pub trait UserExt {
 
     async fn save_user<T: Into<String> + Send>(
         &self,
-        
+        name: T,
+
     ) ;
 }
