@@ -186,3 +186,5 @@ pub struct UserPasswordUpdateDto {
     )]
     pub old_password: String,
 }
+
+#[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
