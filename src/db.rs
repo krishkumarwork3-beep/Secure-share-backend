@@ -76,6 +76,7 @@ pub trait UserExt {
     async fn get_sent_files(
         &self,
         user_id: Uuid,
+        page: u32,
 
     ) ;
 }
