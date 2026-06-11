@@ -190,5 +190,5 @@ pub struct UserPasswordUpdateDto {
 #[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
 pub struct SearchQueryByEmailDTO {
     #[validate(length(min = 1, message = "Query is requireed"))]
-
+    pub query: String,
 }
