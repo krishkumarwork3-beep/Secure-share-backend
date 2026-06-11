@@ -95,7 +95,8 @@ impl UserSendFileDto {
         UserSendFileDto {
             file_id: file_data.file_id.to_string(),
             file_name: file_data.file_name.to_owned(),
-            
+            recipient_email: file_data.recipient_email.to_owned(),
+           
         }
     }
 
