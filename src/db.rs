@@ -60,6 +60,6 @@ pub trait UserExt {
         encrypted_aes_key: Vec<u8>,
         encrypted_file: Vec<u8>,
         iv: Vec<u8>,
-    ) ;
+    ) -> Result<(), sqlx::Error>;
 
 }
