@@ -44,5 +44,5 @@ pub trait UserExt {
         password: String,
     ) -> Result<User, sqlx::Error>;
 
-    async fn save_user_key(&self) ;
+    async fn save_user_key(&self, user_id: Uuid);
 }
