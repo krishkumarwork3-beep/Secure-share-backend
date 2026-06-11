@@ -37,4 +37,10 @@ pub trait UserExt {
         user_id: Uuid,
         name: T,
     ) -> Result<User, sqlx::Error>;
+
+    async fn update_user_password(
+        &self,
+
+    ) ;
+
 }
