@@ -51,7 +51,8 @@ pub trait UserExt {
 
     async fn save_encrypted_file(
         &self,
-
+        user_id: Uuid,
+       
     ) ;
 
 }
