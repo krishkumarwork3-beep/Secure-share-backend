@@ -53,5 +53,5 @@ pub struct FilterUserDto {
     pub name: String,
     pub email: String,
     pub public_key: Option<String>,
-   
+    pub created_at: DateTime<Utc>,
 }
