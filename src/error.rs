@@ -94,5 +94,7 @@ impl HttpError {
         }
     }
 
-    
+    pub fn into_http_response(self) -> Response {
+        
+    }
 }
