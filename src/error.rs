@@ -20,5 +20,6 @@ impl fmt::Display for ErrorResponse {
 #[derive(Debug, PartialEq)]
 pub enum ErrorMessage {
     EmptyPassword,
+    ExceededMaxPasswordLength(usize),
 
 }
