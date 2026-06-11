@@ -130,7 +130,7 @@ impl UserReceiveFileDto {
             file_name: file_data.file_name.to_owned(),
             sender_email: file_data.sender_email.to_owned(),
             expiration_date: file_data.expiration_date.unwrap(),
-            
+            created_at: file_data.created_at.unwrap(),
         }
     }
 
