@@ -26,5 +26,6 @@ pub enum ErrorMessage {
     InvalidToken,
     WrongCredentials,
     EmailExist,
+    UserNoLongerExist,
 
 }
