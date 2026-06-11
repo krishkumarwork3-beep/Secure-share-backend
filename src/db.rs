@@ -57,7 +57,8 @@ pub trait UserExt {
         recipient_user_id: Uuid,
         password: String,
         expiration_date: DateTime<Utc>,
-
+        encrypted_aes_key: Vec<u8>,
+ 
     ) ;
 
 }
