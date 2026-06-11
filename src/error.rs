@@ -97,7 +97,7 @@ impl HttpError {
     pub fn into_http_response(self) -> Response {
         let json_response = Json(ErrorResponse {
             status: "fail".to_string(),
-
+            message: self.message.clone(),
         });
 
 
