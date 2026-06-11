@@ -63,7 +63,8 @@ impl FilterUserDto {
             id: user.id.to_string(),
             name: user.name.to_owned(),
             email: user.email.to_owned(),
-            
+            public_key: user.public_key.to_owned(),
+           
         }
     }
 }
