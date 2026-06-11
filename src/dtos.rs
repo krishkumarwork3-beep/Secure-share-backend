@@ -134,5 +134,7 @@ impl UserReceiveFileDto {
         }
     }
 
-    
+    pub fn filter_receive_user_files(user: &[ReceiveFileDetails]) -> Vec<UserReceiveFileDto> {
+       
+    }
 }
