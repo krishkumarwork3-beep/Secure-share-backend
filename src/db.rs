@@ -59,7 +59,7 @@ pub trait UserExt {
         expiration_date: DateTime<Utc>,
         encrypted_aes_key: Vec<u8>,
         encrypted_file: Vec<u8>,
-
+        iv: Vec<u8>,
     ) ;
 
 }
