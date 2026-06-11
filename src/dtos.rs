@@ -238,5 +238,6 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
         return Err(error);
     }
 
+    let parsed_date = DateTime::parse_from_rfc3339(expiration_date)
     
 }
