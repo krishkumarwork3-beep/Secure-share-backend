@@ -71,5 +71,5 @@ pub trait UserExt {
     async fn get_file(
         &self,
         file_id: Uuid,
-    ) ;
+    ) -> Result<Option<File>, sqlx::Error>;
 }
