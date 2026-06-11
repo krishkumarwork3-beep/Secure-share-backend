@@ -109,7 +109,7 @@ impl fmt::Display for HttpError {
         write!(
             f,
             "HttpError: message: {}, status: {}",
-
+            self.message, self.status
         )
     }
 }
