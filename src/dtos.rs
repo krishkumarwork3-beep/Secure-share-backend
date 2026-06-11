@@ -74,3 +74,8 @@ impl FilterUserDto {
 pub struct UserData {
     pub user: FilterUserDto,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserResponseDto {
+    
+}
