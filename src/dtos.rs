@@ -221,5 +221,9 @@ pub struct FileUploadDtos {
     #[validate(email(message = "Invalid email format"))]
     pub recipient_email: String,
 
+    #[validate(
+        length(min = 1, message = "New password is required."),
+        
+    )]
     
 }
