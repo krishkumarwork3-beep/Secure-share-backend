@@ -100,6 +100,6 @@ impl HttpError {
             message: self.message.clone(),
         });
 
-
+        (self.status, json_response).into_response()
     }
 }
