@@ -259,5 +259,7 @@ fn validate_expiration_date(expiration_date: &str) -> Result<(), ValidationError
 #[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
 pub struct RetrieveFileDto {
     #[validate(length(min = 1, message = "Shared id is required"))]
+    pub shared_id: String,
+
     
 }
