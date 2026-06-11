@@ -160,4 +160,6 @@ pub struct Response {
 }
 
 #[derive(Validate, Debug, Default, Clone, Serialize, Deserialize)]
-
+pub struct NameUpdateDto {
+   
+}
