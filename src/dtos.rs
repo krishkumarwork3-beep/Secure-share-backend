@@ -43,5 +43,6 @@ pub struct LoginUserDto {
 pub struct RequestQueryDto {
     #[validate(range(min = 1))]
     pub page: Option<usize>,
-   
+    #[validate(range(min = 1, max = 50))]
+    pub limit: Option<usize>,
 }
