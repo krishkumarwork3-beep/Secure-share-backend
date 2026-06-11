@@ -144,4 +144,5 @@ impl UserReceiveFileDto {
 pub struct UserReceiveFileListResponseDto {
     pub status: String,
     pub files: Vec<UserReceiveFileDto>,
+    pub results: i64,
 }
