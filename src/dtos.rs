@@ -51,5 +51,6 @@ pub struct RequestQueryDto {
 pub struct FilterUserDto {
     pub id: String,
     pub name: String,
+    pub email: String,
     
 }
