@@ -77,5 +77,5 @@ pub struct UserData {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct UserResponseDto {
-    
+    pub status: String,
 }
