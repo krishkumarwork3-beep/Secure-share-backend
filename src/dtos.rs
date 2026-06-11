@@ -200,7 +200,9 @@ pub struct FilterEmailDto {
 
 impl FilterEmailDto {
     pub fn filter_email(user: &User) -> Self {
-        
+        FilterEmailDto {
+            email: user.email.to_owned(),
+        }
     }
 
     
