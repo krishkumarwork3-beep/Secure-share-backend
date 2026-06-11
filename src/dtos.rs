@@ -80,3 +80,8 @@ pub struct UserResponseDto {
     pub status: String,
     pub data: UserData,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct UserSendFileDto {
+    
+}
