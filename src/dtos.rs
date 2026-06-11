@@ -146,3 +146,5 @@ pub struct UserReceiveFileListResponseDto {
     pub files: Vec<UserReceiveFileDto>,
     pub results: i64,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
