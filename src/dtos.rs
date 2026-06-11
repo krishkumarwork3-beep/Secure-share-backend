@@ -225,5 +225,7 @@ pub struct FileUploadDtos {
         length(min = 1, message = "New password is required."),
         length(min = 6, message = "New password must be at least 6 characters")
     )]
-    
+    pub password: String,
+
+   
 }
