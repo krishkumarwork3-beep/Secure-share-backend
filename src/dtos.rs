@@ -46,3 +46,8 @@ pub struct RequestQueryDto {
     #[validate(range(min = 1, max = 50))]
     pub limit: Option<usize>,
 }
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct FilterUserDto {
+    
+}
