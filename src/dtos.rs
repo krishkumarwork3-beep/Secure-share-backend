@@ -166,3 +166,6 @@ pub struct NameUpdateDto {
 }
 
 #[derive(Debug, Validate, Default, Clone, Serialize, Deserialize)]
+pub struct UserPasswordUpdateDto {
+    
+}
