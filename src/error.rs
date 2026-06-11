@@ -16,3 +16,5 @@ impl fmt::Display for ErrorResponse {
         write!(f, "{}", serde_json::to_string(&self).unwrap())
     }
 }
+
+#[derive(Debug, PartialEq)]
