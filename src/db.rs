@@ -87,4 +87,7 @@ pub trait UserExt {
         limit: usize
     ) -> Result<(Vec<ReceiveFileDetails>, i64), sqlx::Error>;
 
+    async fn delete_expired_files(
+        &self
+    ) ;
 }
