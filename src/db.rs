@@ -48,4 +48,10 @@ pub trait UserExt {
 
     async fn search_by_email(&self, user_id: Uuid, query: String)
         -> Result<Vec<User>, sqlx::Error>;
+
+    async fn save_encrypted_file(
+        &self,
+
+    ) ;
+
 }
