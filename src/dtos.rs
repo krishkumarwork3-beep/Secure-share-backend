@@ -138,3 +138,6 @@ impl UserReceiveFileDto {
         user.iter().map(UserReceiveFileDto::filter_receive_user_file).collect()
     }
 }
+
+
+#[derive(Debug, Serialize, Deserialize)]
