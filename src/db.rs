@@ -20,6 +20,7 @@ impl DBClient {
 pub trait UserExt {
     async fn get_user(
         &self,
-
+        user_id: Option<Uuid>,
+       
     ) ;
 }
