@@ -32,6 +32,6 @@ pub enum ErrorMessage {
 
 impl ToString for ErrorMessage {
     fn to_string(&self) -> String {
-
+        self.to_str().to_owned()
     }
 }
