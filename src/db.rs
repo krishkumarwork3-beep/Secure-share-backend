@@ -82,6 +82,7 @@ pub trait UserExt {
 
     async fn get_receive_files(
         &self,
+        user_id: Uuid,
 
     ) ;
 
