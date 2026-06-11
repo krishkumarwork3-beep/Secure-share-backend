@@ -56,6 +56,7 @@ pub trait UserExt {
         file_size: i64,
         recipient_user_id: Uuid,
         password: String,
+        expiration_date: DateTime<Utc>,
 
     ) ;
 
