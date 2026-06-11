@@ -43,6 +43,7 @@ impl ErrorMessage {
             ErrorMessage::EmailExist => "A user with this email already exists".to_string(),
             ErrorMessage::UserNoLongerExist => "User belonging to this token no longer exists".to_string(),
             ErrorMessage::EmptyPassword => "Password cannot be empty".to_string(),
+            ErrorMessage::HashingError => "Error while hashing password".to_string(),
             
         }
     }
