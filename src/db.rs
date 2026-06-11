@@ -122,6 +122,6 @@ impl UserExt for DBClient {
             ).fetch_optional(&self.pool).await?;
         }
 
-
+        Ok(user)
     }
 }
