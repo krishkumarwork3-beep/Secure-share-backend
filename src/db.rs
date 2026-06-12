@@ -310,7 +310,7 @@ impl UserExt for DBClient {
             r#"
             SELECT id, user_id, file_name, file_size, encrypted_aes_key, encrypted_file, iv, created_at
             FROM files
-
+            WHERE id = $1
             "#,
 
         )
