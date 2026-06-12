@@ -258,7 +258,8 @@ impl UserExt for DBClient {
             encrypted_file,
             iv
         )
-  
+        .fetch_one(&self.pool)
+        .await?;
 
 
 
