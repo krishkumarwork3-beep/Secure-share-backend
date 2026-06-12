@@ -35,5 +35,11 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
 }
 
 pub fn compare(password: &str, hashed_password: &str) -> Result<bool, ErrorMessage> {
+    if password.is_empty() {
+        return Err(ErrorMessage::EmptyPassword);
+    }
 
+    if password.len() > MAX_PASSWORD_LENGTH {
+        return Err(ErrorMessage::ExceededMaxPasswordLength(MAX_PASSWORD_LENGTH));
+    }
 }
