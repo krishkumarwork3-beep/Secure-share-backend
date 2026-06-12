@@ -298,7 +298,7 @@ impl UserExt for DBClient {
         .fetch_optional(&self.pool)
         .await?;
 
-
+        Ok(shared_link)
     }
 
 }
