@@ -399,7 +399,10 @@ impl UserExt for DBClient {
                     users u ON f.user_id = u.id
                 WHERE 
                     sl.recipient_user_id = $1
-
+                ORDER BY 
+                    sl.created_at DESC 
+                LIMIT $2 
+                OFFSET $3
             "#,
 
         )
