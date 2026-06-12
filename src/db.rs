@@ -190,4 +190,8 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
+
+    async fn save_user_key(&self, user_id: Uuid, public_key: String) -> Result<(), sqlx::Error> {
+        
+    }
 }
