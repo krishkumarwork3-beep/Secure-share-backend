@@ -442,7 +442,9 @@ impl UserExt for DBClient {
         fetch_all(&self.pool)
         .await?;
 
+        if expired_shared_links.is_empty() {
 
+        }
 
 
 
