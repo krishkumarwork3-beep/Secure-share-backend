@@ -267,7 +267,10 @@ impl UserExt for DBClient {
             INSERT INTO shared_links (file_id, recipient_user_id, password, expiration_date, created_at)
             VALUES ($1, $2, $3, $4, NOW())
             "#,
-
+            file_id,
+            recipient_user_ud,
+            password,
+            expiration_date
         )
 
 
