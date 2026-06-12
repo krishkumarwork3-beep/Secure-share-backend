@@ -295,7 +295,8 @@ impl UserExt for DBClient {
             shared_id,
             user_id,
         )
-
+        .fetch_optional(&self.pool)
+        .await?;
 
 
     }
