@@ -168,4 +168,12 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
+
+    async fn update_user_password(
+        &self,
+        user_id: Uuid,
+        new_password: String,
+    ) -> Result<User, sqlx::Error> {
+
+    }
 }
