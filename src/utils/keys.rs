@@ -16,3 +16,8 @@ pub async fn generate_key(
     user: User,
 ) -> Result<impl IntoResponse, HttpError> {
         let mut rng = OsRng;
+
+        let private_key = RsaPrivateKey::new(&mut rng, 2048)
+    .map_err(|e| {
+        HttpError::server_error(e.to_string())
+    })?;
