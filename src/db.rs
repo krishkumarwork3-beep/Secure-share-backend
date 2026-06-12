@@ -220,7 +220,7 @@ impl UserExt for DBClient {
             SELECT id, name, email, password, public_key, created_at, updated_at
             FROM users
             WHERE email LIKE $1
-
+            AND public_key IS NOT NULL
 
             "#,
 
