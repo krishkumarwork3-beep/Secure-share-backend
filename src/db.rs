@@ -391,7 +391,12 @@ impl UserExt for DBClient {
                     u.email AS sender_email,
                     sl.expiration_date,
                     sl.created_at
-
+                FROM 
+                    shared_links sl
+                JOIN 
+                    files f ON sl.file_id = f.id
+                JOIN 
+                    users u ON f.user_id = u.id
 
             "#,
 
