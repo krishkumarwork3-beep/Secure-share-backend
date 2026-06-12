@@ -423,7 +423,7 @@ impl UserExt for DBClient {
         .fetch_one(&self.pool)
         .await?;
 
-
+        let total_count = count_row.unwrap_or(0);
 
 
     }
