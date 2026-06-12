@@ -31,3 +31,5 @@ pub async fn generate_key(
         .map_err(|e| HttpError::server_error(e.to_string()))?;
 
         let public_key_b64 = STANDARD.encode(public_key_prm.as_bytes());
+
+        let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
