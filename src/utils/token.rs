@@ -30,3 +30,10 @@ pub fn create_token (
         iat,
         exp,
     };
+
+    encode(
+        &Header::default(), 
+        &claims, 
+        &EncodingKey::from_secret(secret),
+    )
+}
