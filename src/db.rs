@@ -477,7 +477,7 @@ impl UserExt for DBClient {
             DELETE FROM files
             WHERE id = ANY($1)
             "#,
-
+            &expired_file_ids[..] // Pass the list of expired file IDs
         )
         .execute(&self.pool)
         .await?;
