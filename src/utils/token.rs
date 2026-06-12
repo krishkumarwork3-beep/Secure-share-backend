@@ -48,3 +48,9 @@ pub fn decode_token<T: Into<String>>(
         &DecodingKey::from_secret(secret), 
         &Validation::new(jsonwebtoken::Algorithm::HS256),
     );
+
+        match decode {
+        Ok(token) => Ok(token.claims.sub),
+        Err(_) => Err(HttpError::unauthorized(ErrorMessage::InvalidToken.to_string()))
+    }
+}
