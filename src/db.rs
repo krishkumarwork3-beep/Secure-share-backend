@@ -214,6 +214,17 @@ impl UserExt for DBClient {
         user_id: Uuid,
         query: String,
     ) -> Result<Vec<User>, sqlx::Error> {
+        let user = sqlx::query_as!(
+            User,
+            r#"
+            SELECT id, name, email, password, public_key, created_at, updated_at
+            FROM users
+
+            "#,
+
+        )
+
+
 
     }
 }
