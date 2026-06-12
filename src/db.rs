@@ -301,4 +301,10 @@ impl UserExt for DBClient {
         Ok(shared_link)
     }
 
+    async fn get_file(
+        &self,
+        file_id: Uuid,
+    ) -> Result<Option<File>, sqlx::Error> {
+
+    }
 }
