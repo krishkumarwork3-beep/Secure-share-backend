@@ -38,3 +38,8 @@ pub async fn generate_key(
     .save_user_key(user_id.clone(), public_key_b64.clone())
     .await
     .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+        let private_keys_dir = "assets/private_keys";
+
+        fs::create_dir_all(&private_keys_dir)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
