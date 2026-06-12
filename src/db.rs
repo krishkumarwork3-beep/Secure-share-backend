@@ -420,7 +420,8 @@ impl UserExt for DBClient {
             "#,
             user_id,
         )
-
+        .fetch_one(&self.pool)
+        .await?;
 
 
 
