@@ -20,3 +20,7 @@ pub fn create_token (
     if user_id.is_empty() {
         return Err(jsonwebtoken::errors::ErrorKind::InvalidSubject.into());
     }
+
+    let now = Utc::now();
+    let iat = now.timestamp() as usize;
+    let exp = (now + Duration::minutes(expires_in_seconds)).timestamp() as usize;
