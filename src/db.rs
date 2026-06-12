@@ -305,6 +305,17 @@ impl UserExt for DBClient {
         &self,
         file_id: Uuid,
     ) -> Result<Option<File>, sqlx::Error> {
+        let file = sqlx::query_as!(
+            File,
+            r#"
+            SELECT id, user_id, file_name, file_size, encrypted_aes_key, encrypted_file, iv, created_at
+            FROM files
+
+            "#,
+
+        )
+
+
 
     }
 }
