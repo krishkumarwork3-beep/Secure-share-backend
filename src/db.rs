@@ -482,7 +482,7 @@ impl UserExt for DBClient {
         .execute(&self.pool)
         .await?;
 
-
+        println!("Successfully deleted expired files and their shared links.");
 
 
 
