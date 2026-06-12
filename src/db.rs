@@ -265,7 +265,7 @@ impl UserExt for DBClient {
         sqlx::query!(
             r#"
             INSERT INTO shared_links (file_id, recipient_user_id, password, expiration_date, created_at)
-  
+            VALUES ($1, $2, $3, $4, NOW())
             "#,
 
         )
