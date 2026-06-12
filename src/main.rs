@@ -64,4 +64,6 @@ async fn main() {
         env: config.clone(),
         db_client: db_client.clone(),
     };
+
+    let sched = JobScheduler::new().await.unwrap();
 }
