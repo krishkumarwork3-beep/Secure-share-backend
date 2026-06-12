@@ -146,4 +146,12 @@ impl UserExt for DBClient {
         .await?;
         Ok(user)
     }
+
+    async fn update_user_name<T: Into<String> + Send>(
+        &self,
+        user_id: Uuid,
+        new_name: T,
+    ) -> Result<User, sqlx::Error> {
+ 
+    }
 }
