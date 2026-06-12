@@ -43,3 +43,7 @@ pub async fn generate_key(
 
         fs::create_dir_all(&private_keys_dir)
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+        let pem_file_path = format!("{}/{}.pem",private_keys_dir,user_id.clone());
+
+    let mut file = File::create(&pem_file_path)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
