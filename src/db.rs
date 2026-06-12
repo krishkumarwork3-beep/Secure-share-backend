@@ -380,7 +380,7 @@ impl UserExt for DBClient {
         page: u32,
         limit: usize
     ) -> Result<(Vec<ReceiveFileDetails>, i64), sqlx::Error> {
-
+        let offset = (page - 1) * limit as u32;
 
 
 
