@@ -90,4 +90,15 @@ async fn main() {
     });
 
     let app: Router = Router::new().layer(cors.clone());
+
+        println!(
+        "{}",
+        format!("🚀 Server is running on http://localhost:{}", config.port)
+    );
+
+    let listener = tokio::net::TcpListener::bind(
+        format!("0.0.0.0:{}", &config.port)
+    )
+    .await
+    .unwrap();
 }
