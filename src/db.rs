@@ -208,4 +208,12 @@ impl UserExt for DBClient {
 
         Ok(())
     }
+
+    async fn search_by_email(
+        &self,
+        user_id: Uuid,
+        query: String,
+    ) -> Result<Vec<User>, sqlx::Error> {
+
+    }
 }
