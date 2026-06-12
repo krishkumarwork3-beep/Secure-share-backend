@@ -290,7 +290,7 @@ impl UserExt for DBClient {
             FROM shared_links
             WHERE id = $1
             AND recipient_user_id = $2
-
+            AND expiration_date > NOW()
             "#,
 
         )
