@@ -10,3 +10,8 @@ use rsa::{
 use base64::{engine::general_purpose::STANDARD, Engine};
 
 use crate::{db::UserExt, error::HttpError, models::User, AppState};
+
+pub async fn generate_key(
+    app_state: Arc<AppState>,
+    user: User,
+) -> Result<impl IntoResponse, HttpError> {
