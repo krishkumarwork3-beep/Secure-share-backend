@@ -364,9 +364,10 @@ impl UserExt for DBClient {
                 JOIN files f ON sl.file_id = f.id
                 WHERE f.user_id = $1
             "#,
-
+            user_id,
         )
-
+        .fetch_one(&self.pool)
+        .await?;
 
 
 
