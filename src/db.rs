@@ -277,4 +277,13 @@ impl UserExt for DBClient {
 
         Ok(())
     }
+
+    async fn get_shared(
+        &self,
+        shared_id: Uuid,
+        user_id: Uuid,
+    ) -> Result<Option<SharedLink>, sqlx::Error> {
+        
+    }
+
 }
