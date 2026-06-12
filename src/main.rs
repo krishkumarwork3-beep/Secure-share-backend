@@ -4,6 +4,7 @@ mod models;
 mod dtos;
 mod error;
 mod db;
+mod utils;
 use std::sync::Arc;
 
 use axum::{
