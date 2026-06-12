@@ -272,6 +272,8 @@ impl UserExt for DBClient {
             password,
             expiration_date
         )
+        .execute(&self.pool)
+        .await?;
 
 
     }
