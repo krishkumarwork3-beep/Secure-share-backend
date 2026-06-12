@@ -428,4 +428,22 @@ impl UserExt for DBClient {
         Ok((files, total_count))
     }
 
+    async fn delete_expired_files(
+        &self
+    ) -> Result<(), sqlx::Error> {
+        
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+    }
 }
