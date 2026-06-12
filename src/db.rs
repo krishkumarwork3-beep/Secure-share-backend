@@ -484,7 +484,7 @@ impl UserExt for DBClient {
 
         println!("Successfully deleted expired files and their shared links.");
 
-
+        Ok(())
 
     }
 }
