@@ -47,3 +47,6 @@ pub async fn generate_key(
 
     let mut file = File::create(&pem_file_path)
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+        file.write_all(private_key_pem.as_bytes())
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
