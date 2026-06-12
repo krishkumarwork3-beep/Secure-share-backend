@@ -21,3 +21,5 @@ pub async fn generate_key(
     .map_err(|e| {
         HttpError::server_error(e.to_string())
     })?;
+
+        let public_key = RsaPublicKey::from(&private_key);
