@@ -10,3 +10,9 @@ pub struct TokenClaims {
     pub iat: usize,
     pub exp: usize,
 }
+
+pub fn create_token (
+    user_id: &str,
+    secret: &[u8],
+    expires_in_seconds: i64,
+) -> Result<String, jsonwebtoken::errors::Error> {
