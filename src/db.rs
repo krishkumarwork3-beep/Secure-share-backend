@@ -275,6 +275,6 @@ impl UserExt for DBClient {
         .execute(&self.pool)
         .await?;
 
-
+        Ok(())
     }
 }
