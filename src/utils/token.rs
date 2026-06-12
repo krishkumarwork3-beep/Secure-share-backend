@@ -16,3 +16,7 @@ pub fn create_token (
     secret: &[u8],
     expires_in_seconds: i64,
 ) -> Result<String, jsonwebtoken::errors::Error> {
+
+    if user_id.is_empty() {
+        return Err(jsonwebtoken::errors::ErrorKind::InvalidSubject.into());
+    }
