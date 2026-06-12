@@ -37,3 +37,8 @@ pub fn create_token (
         &EncodingKey::from_secret(secret),
     )
 }
+
+pub fn decode_token<T: Into<String>>(
+    token: T,
+    secret: &[u8],
+) -> Result<String, HttpError> {
