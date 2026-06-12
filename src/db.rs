@@ -251,7 +251,12 @@ impl UserExt for DBClient {
             VALUES ($1, $2, $3, $4, $5, $6, NOW())
             RETURNING id
             "#,
-
+            user_id,
+            file_name,
+            file_size,
+            encrypted_aes_key,
+            encrypted_file,
+            iv
         )
   
 
