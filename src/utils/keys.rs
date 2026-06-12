@@ -29,3 +29,5 @@ pub async fn generate_key(
 
         let public_key_prm = public_key.to_pkcs1_pem(rsa::pkcs1::LineEnding::LF)
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+        let public_key_b64 = STANDARD.encode(public_key_prm.as_bytes());
