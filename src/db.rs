@@ -466,7 +466,7 @@ impl UserExt for DBClient {
             DELETE FROM shared_links
             WHERE id = ANY($1)
             "#,
-  
+            &expired_shared_links[..] // Pass the list of expired shared link IDs
         )
 
 
