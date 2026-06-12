@@ -246,6 +246,11 @@ impl UserExt for DBClient {
     ) -> Result<(), sqlx::Error> {
         // Insert into the files table and get the file_id
         let file_id: Uuid = sqlx::query_scalar!(
+            r#"
+            INSERT INTO files (user_id, file_name, file_size, encrypted_aes_key, encrypted_file, iv, created_at)
+            VALUES ($1, $2, $3, $4, $5, $6, NOW())
+
+            "#,
 
         )
   
