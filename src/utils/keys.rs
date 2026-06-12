@@ -33,3 +33,8 @@ pub async fn generate_key(
         let public_key_b64 = STANDARD.encode(public_key_prm.as_bytes());
 
         let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
+
+        app_state.db_client
+    .save_user_key(user_id.clone(), public_key_b64.clone())
+    .await
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
