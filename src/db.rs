@@ -371,6 +371,6 @@ impl UserExt for DBClient {
 
         let total_count = count_row.unwrap_or(0);
 
-
+        Ok((files, total_count))
     }
 }
