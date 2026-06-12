@@ -22,3 +22,9 @@ use sqlx::postgres::PgPoolOptions;
 use tower_http::cors::CorsLayer;
 use tracing_subscriber::filter::LevelFilter;
 use tokio_cron_scheduler::{JobScheduler, Job};
+
+#[derive(Debug, Clone)]
+pub struct AppState {
+    pub env: Config,
+    pub db_client: DBClient,
+}
