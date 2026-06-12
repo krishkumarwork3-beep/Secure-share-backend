@@ -471,7 +471,17 @@ impl UserExt for DBClient {
         .execute(&self.pool)
         .await?;
 
- 
+        // Delete the expired files
+        sqlx::query!(
+            r#"
+            DELETE FROM files
+            WHERE id = ANY($1)
+            "#,
+
+        )
+        .execute(&self.pool)
+        .await?;
+
 
 
 
