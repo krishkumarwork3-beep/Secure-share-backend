@@ -411,6 +411,15 @@ impl UserExt for DBClient {
         .fetch_all(&self.pool)
         .await?;
 
+        let count_row = sqlx::query_scalar!(
+            r#"
+                SELECT COUNT(*)
+                FROM shared_links sl
+                JOIN files f ON sl.file_id = f.id
+                WHERE sl.recipient_user_id = $1
+            "#,
+            user_id,
+        )
 
 
 
