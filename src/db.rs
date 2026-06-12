@@ -292,7 +292,8 @@ impl UserExt for DBClient {
             AND recipient_user_id = $2
             AND expiration_date > NOW()
             "#,
-
+            shared_id,
+            user_id,
         )
 
 
