@@ -231,4 +231,20 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
+
+    async fn save_encrypted_file(
+        &self,
+        user_id: Uuid,
+        file_name: String,
+        file_size: i64,
+        recipient_user_ud: Uuid,
+        password: String,
+        expiration_date: DateTime<Utc>,
+        encrypted_aes_key: Vec<u8>,
+        encrypted_file: Vec<u8>,
+        iv: Vec<u8>,
+    ) -> Result<(), sqlx::Error> {
+        // Insert into the files table and get the file_id
+        
+    }
 }
