@@ -42,4 +42,7 @@ pub fn compare(password: &str, hashed_password: &str) -> Result<bool, ErrorMessa
     if password.len() > MAX_PASSWORD_LENGTH {
         return Err(ErrorMessage::ExceededMaxPasswordLength(MAX_PASSWORD_LENGTH));
     }
+
+        let parsed_hash = PasswordHash::new(hashed_password)
+    .map_err(|_| ErrorMessage::InvalidHashFormat)?;
 }
