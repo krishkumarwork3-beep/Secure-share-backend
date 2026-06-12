@@ -38,4 +38,10 @@ async fn main() {
     dotenv().ok();
     let config = Config::init();
 
+        let pool = match PgPoolOptions::new()
+        .max_connections(10)
+        .connect(&config.database_url)
+        .await {
+        };
+
 }
