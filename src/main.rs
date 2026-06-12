@@ -82,4 +82,10 @@ async fn main() {
         })
        } 
     }).unwrap();
+
+    sched.add(job).await.unwrap();
+
+    tokio::spawn(async move {
+        sched.start().await.unwrap();
+    });
 }
