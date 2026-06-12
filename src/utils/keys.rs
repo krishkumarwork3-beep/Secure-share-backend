@@ -50,3 +50,7 @@ pub async fn generate_key(
 
         file.write_all(private_key_pem.as_bytes())
     .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+        Ok((StatusCode::OK, "true"))
+
+}
