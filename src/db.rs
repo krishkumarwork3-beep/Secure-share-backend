@@ -174,6 +174,18 @@ impl UserExt for DBClient {
         user_id: Uuid,
         new_password: String,
     ) -> Result<User, sqlx::Error> {
+        let user = sqlx::query_as!(
+            User,
+            r#"
+            UPDATE users
+            SET password = $1, updated_at = Now()
+            WHERE id = $2
+  
+            "#,
+
+        )
+
+
 
     }
 }
