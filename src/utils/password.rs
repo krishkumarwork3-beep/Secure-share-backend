@@ -19,4 +19,8 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
     if password.is_empty() {
         return Err(ErrorMessage::EmptyPassword);
     }
+
+    if password.len() > MAX_PASSWORD_LENGTH {
+        return Err(ErrorMessage::ExceededMaxPasswordLength(MAX_PASSWORD_LENGTH));
+    }
 }
