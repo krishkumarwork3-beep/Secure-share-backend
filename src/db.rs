@@ -288,7 +288,7 @@ impl UserExt for DBClient {
             r#"
             SELECT id, file_id, recipient_user_id, password, expiration_date, created_at
             FROM shared_links
-
+            WHERE id = $1
 
 
             "#,
