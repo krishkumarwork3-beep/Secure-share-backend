@@ -397,6 +397,8 @@ impl UserExt for DBClient {
                     files f ON sl.file_id = f.id
                 JOIN 
                     users u ON f.user_id = u.id
+                WHERE 
+                    sl.recipient_user_id = $1
 
             "#,
 
