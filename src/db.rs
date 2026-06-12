@@ -192,6 +192,19 @@ impl UserExt for DBClient {
     }
 
     async fn save_user_key(&self, user_id: Uuid, public_key: String) -> Result<(), sqlx::Error> {
-        
+        sqlx::query_as!(
+            User,
+            r#"
+            UPDATE users
+            SET public_key = $1, updated_at = Now()
+            WHERE id = $2
+            RETURNING id, name, email, password, public_key, created_at, updated_at
+            "#,
+            public_key,
+            user_id
+        )
+  
+
+  
     }
 }
