@@ -439,7 +439,8 @@ impl UserExt for DBClient {
             WHERE sl.expiration_date < NOW()
             "#,
         ).
-
+        fetch_all(&self.pool)
+        .await?;
 
 
 
