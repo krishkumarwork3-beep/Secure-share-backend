@@ -158,7 +158,7 @@ impl UserExt for DBClient {
             UPDATE users
             SET name = $1, updated_at = Now()
             WHERE id = $2
-
+            RETURNING id, name, email, password, public_key, created_at, updated_at
             "#,
 
         )
