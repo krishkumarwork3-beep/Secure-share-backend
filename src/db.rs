@@ -447,6 +447,19 @@ impl UserExt for DBClient {
             return Ok(());
         }
 
+        let expired_file_ids: Vec<Uuid> = sqlx::query_scalar!(
+            r#"
+            SELECT f.id
+            FROM files f
+            WHERE f.id IN (
+                SELECT sl.file_id
+                FROM shared_links sl
+                WHERE sl.expiration_date < NOW()
+            )
+            "#,
+        )
+        .fetch_all(&self.pool)
+        .await?;
 
 
 
