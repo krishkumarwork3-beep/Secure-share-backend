@@ -461,7 +461,13 @@ impl UserExt for DBClient {
         .fetch_all(&self.pool)
         .await?;
 
-
+        sqlx::query!(
+            r#"
+            DELETE FROM shared_links
+            WHERE id = ANY($1)
+            "#,
+  
+        )
 
 
  
