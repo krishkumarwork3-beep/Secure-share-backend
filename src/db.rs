@@ -404,9 +404,12 @@ impl UserExt for DBClient {
                 LIMIT $2 
                 OFFSET $3
             "#,
-
+            user_id,
+            limit as i64,
+            offset as i64,
         )
-
+        .fetch_all(&self.pool)
+        .await?;
 
 
 
