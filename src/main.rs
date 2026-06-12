@@ -57,4 +57,11 @@ async fn main() {
         .allow_headers([AUTHORIZATION, ACCEPT, CONTENT_TYPE])
         .allow_credentials(true)
         .allow_methods([Method::GET, Method::POST, Method::PUT]);
+
+    let db_client = DBClient::new(pool);
+
+    let app_state = AppState {
+        env: config.clone(),
+        db_client: db_client.clone(),
+    };
 }
