@@ -245,6 +245,14 @@ impl UserExt for DBClient {
         iv: Vec<u8>,
     ) -> Result<(), sqlx::Error> {
         // Insert into the files table and get the file_id
-        
+        let file_id: Uuid = sqlx::query_scalar!(
+
+        )
+  
+
+
+
+
+
     }
 }
