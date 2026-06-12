@@ -219,6 +219,8 @@ impl UserExt for DBClient {
             r#"
             SELECT id, name, email, password, public_key, created_at, updated_at
             FROM users
+            WHERE email LIKE $1
+
 
             "#,
 
