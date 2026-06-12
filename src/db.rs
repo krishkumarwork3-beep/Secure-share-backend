@@ -468,7 +468,8 @@ impl UserExt for DBClient {
             "#,
             &expired_shared_links[..] // Pass the list of expired shared link IDs
         )
-
+        .execute(&self.pool)
+        .await?;
 
  
 
