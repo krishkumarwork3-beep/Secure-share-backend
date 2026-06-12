@@ -30,4 +30,6 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
         .hash_password(password.as_bytes(), &salt)
         .map_err(|_| ErrorMessage::HashingError)?
         .to_string();
+
+    Ok(hash_password)
 }
