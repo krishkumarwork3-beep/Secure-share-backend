@@ -1,3 +1,4 @@
+#![allow(unused)]
 use async_trait::async_trait;
 use chrono::{DateTime, Utc};
 use sqlx::{Pool, Postgres};
@@ -208,7 +209,6 @@ impl UserExt for DBClient {
 
         Ok(())
     }
-
     async fn search_by_email(
         &self,
         user_id: Uuid,
@@ -231,7 +231,6 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
-
     async fn save_encrypted_file(
         &self,
         user_id: Uuid,
@@ -319,7 +318,6 @@ impl UserExt for DBClient {
 
         Ok(file)
     }
-
     async fn get_sent_files(
         &self,
         user_id: Uuid,
@@ -374,7 +372,7 @@ impl UserExt for DBClient {
         Ok((files, total_count))
     }
 
-        async fn get_receive_files(
+    async fn get_receive_files(
         &self,
         user_id: Uuid,
         page: u32,
