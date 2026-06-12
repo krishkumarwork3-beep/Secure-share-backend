@@ -124,4 +124,13 @@ impl UserExt for DBClient {
 
         Ok(user)
     }
+
+    async fn save_user<T: Into<String> + Send>(
+        &self,
+        name: T,
+        email: T,
+        password: T,
+    ) -> Result<User, sqlx::Error> {
+        
+    }
 }
