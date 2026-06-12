@@ -261,8 +261,14 @@ impl UserExt for DBClient {
         .fetch_one(&self.pool)
         .await?;
 
+        // Insert into the shared_links table using the returned file_id
+        sqlx::query!(
+            r#"
+            INSERT INTO shared_links (file_id, recipient_user_id, password, expiration_date, created_at)
+  
+            "#,
 
-
+        )
 
 
     }
