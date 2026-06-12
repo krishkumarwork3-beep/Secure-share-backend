@@ -88,4 +88,6 @@ async fn main() {
     tokio::spawn(async move {
         sched.start().await.unwrap();
     });
+
+    let app: Router = Router::new().layer(cors.clone());
 }
