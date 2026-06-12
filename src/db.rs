@@ -319,4 +319,13 @@ impl UserExt for DBClient {
 
         Ok(file)
     }
+
+    async fn get_sent_files(
+        &self,
+        user_id: Uuid,
+        page: u32,
+        limit: usize
+    ) -> Result<(Vec<SentFileDetails>, i64), sqlx::Error> {
+
+    }
 }
