@@ -373,4 +373,22 @@ impl UserExt for DBClient {
 
         Ok((files, total_count))
     }
+
+        async fn get_receive_files(
+        &self,
+        user_id: Uuid,
+        page: u32,
+        limit: usize
+    ) -> Result<(Vec<ReceiveFileDetails>, i64), sqlx::Error> {
+
+
+
+
+
+
+
+
+
+    }
+
 }
