@@ -223,9 +223,11 @@ impl UserExt for DBClient {
             AND public_key IS NOT NULL
             AND id != $2
             "#,
-
+            query,
+            user_id
         )
-
+        .fetch_all(&self.pool)
+        .await?;
 
 
     }
