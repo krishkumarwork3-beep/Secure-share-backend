@@ -382,6 +382,20 @@ impl UserExt for DBClient {
     ) -> Result<(Vec<ReceiveFileDetails>, i64), sqlx::Error> {
         let offset = (page - 1) * limit as u32;
 
+        let files = sqlx::query_as!(
+            ReceiveFileDetails,
+            r#"
+                SELECT
+                    sl.id AS file_id,
+                    f.file_name,
+                    u.email AS sender_email,
+                    sl.expiration_date,
+                    sl.created_at
+
+
+            "#,
+
+        )
 
 
 
