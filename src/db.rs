@@ -229,6 +229,6 @@ impl UserExt for DBClient {
         .fetch_all(&self.pool)
         .await?;
 
-
+        Ok(user)
     }
 }
