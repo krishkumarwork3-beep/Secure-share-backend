@@ -283,7 +283,20 @@ impl UserExt for DBClient {
         shared_id: Uuid,
         user_id: Uuid,
     ) -> Result<Option<SharedLink>, sqlx::Error> {
-        
+        let shared_link = sqlx::query_as!(
+            SharedLink,
+            r#"
+            SELECT id, file_id, recipient_user_id, password, expiration_date, created_at
+            FROM shared_links
+
+
+
+            "#,
+
+        )
+
+
+
     }
 
 }
