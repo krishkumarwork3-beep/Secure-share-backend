@@ -188,6 +188,6 @@ impl UserExt for DBClient {
         .fetch_one(&self.pool)
         .await?;
 
-
+        Ok(user)
     }
 }
