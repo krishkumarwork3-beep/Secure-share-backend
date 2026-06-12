@@ -443,7 +443,8 @@ impl UserExt for DBClient {
         .await?;
 
         if expired_shared_links.is_empty() {
-
+            println!("No expired files or shared links to delete.");
+            return Ok(());
         }
 
 
