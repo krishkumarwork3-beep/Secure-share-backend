@@ -23,4 +23,6 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
     if password.len() > MAX_PASSWORD_LENGTH {
         return Err(ErrorMessage::ExceededMaxPasswordLength(MAX_PASSWORD_LENGTH));
     }
+
+    let salt = SaltString::generate(&mut OsRng);
 }
