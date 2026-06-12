@@ -221,7 +221,7 @@ impl UserExt for DBClient {
             FROM users
             WHERE email LIKE $1
             AND public_key IS NOT NULL
-
+            AND id != $2
             "#,
 
         )
