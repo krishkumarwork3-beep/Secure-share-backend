@@ -131,6 +131,15 @@ impl UserExt for DBClient {
         email: T,
         password: T,
     ) -> Result<User, sqlx::Error> {
+        let user = sqlx::query_as!(
+            User,
+            r#"
+            INSERT INTO users (name, email, password) 
+            VALUES ($1, $2, $3) 
+            
+            "#,
+           
+        )
         
     }
 }
