@@ -136,9 +136,9 @@ impl UserExt for DBClient {
             r#"
             INSERT INTO users (name, email, password) 
             VALUES ($1, $2, $3) 
-            
+            RETURNING id, name, email, password, public_key, created_at, updated_at
             "#,
-           
+            
         )
         
     }
