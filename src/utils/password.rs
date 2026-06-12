@@ -25,4 +25,9 @@ pub fn hash(password: impl Into<String>) -> Result<String, ErrorMessage> {
     }
 
     let salt = SaltString::generate(&mut OsRng);
+
+    let hash_password = Argon2::default()
+        .hash_password(password.as_bytes(), &salt)
+        .map_err(|_| ErrorMessage::HashingError)?
+        .to_string();
 }
