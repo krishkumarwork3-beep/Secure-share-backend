@@ -138,8 +138,12 @@ impl UserExt for DBClient {
             VALUES ($1, $2, $3) 
             RETURNING id, name, email, password, public_key, created_at, updated_at
             "#,
-            
+            name.into(),
+            email.into(),
+            password.into()
         )
-        
+        .fetch_one(&self.pool)
+        .await?;
+
     }
 }
