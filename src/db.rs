@@ -249,7 +249,7 @@ impl UserExt for DBClient {
             r#"
             INSERT INTO files (user_id, file_name, file_size, encrypted_aes_key, encrypted_file, iv, created_at)
             VALUES ($1, $2, $3, $4, $5, $6, NOW())
-
+            RETURNING id
             "#,
 
         )
