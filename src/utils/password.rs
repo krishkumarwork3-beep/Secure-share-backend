@@ -10,3 +10,5 @@ use argon2::{
 };
 
 use crate::error::ErrorMessage;
+
+const MAX_PASSWORD_LENGTH: usize = 64;
