@@ -15,3 +15,4 @@ pub async fn generate_key(
     app_state: Arc<AppState>,
     user: User,
 ) -> Result<impl IntoResponse, HttpError> {
+        let mut rng = OsRng;
