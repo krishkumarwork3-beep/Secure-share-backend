@@ -312,9 +312,10 @@ impl UserExt for DBClient {
             FROM files
             WHERE id = $1
             "#,
-
+            file_id
         )
-
+        .fetch_optional(&self.pool)
+        .await?;
 
 
     }
