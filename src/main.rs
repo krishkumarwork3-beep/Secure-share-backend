@@ -66,4 +66,20 @@ async fn main() {
     };
 
     let sched = JobScheduler::new().await.unwrap();
+
+        let job = Job::new_async("0 0 * * * *", {
+       move |_, _| {
+        let db_client = db_client.clone();
+
+        Box::pin(async move {
+            println!("Running scheduled task to delete expired files...");
+
+            if let Err(err) = db_client.delete_expired_files().await {
+                eprintln!("Error deleting expired files: {:?}", err);
+            } else {
+                println!("Successfully deleted expired files.");
+            }
+        })
+       } 
+    }).unwrap();
 }
