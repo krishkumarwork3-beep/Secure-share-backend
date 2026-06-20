@@ -15,3 +15,5 @@ pub async fn decrypt_file(
 )
 .map_err(|e| HttpError::server_error(e.to_string()))?;
 let iv = iv;
+let cipher = Cbc::<Aes256, Pkcs7>::new_from_slices(&aes_key, &iv)
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
