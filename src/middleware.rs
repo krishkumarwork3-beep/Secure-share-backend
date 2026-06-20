@@ -59,3 +59,8 @@ let token_details =
     .map_err(|e| {
         HttpError::server_error(e.to_string())
     })?;
+    let user = user.ok_or_else(|| {
+    HttpError::unauthorized(
+        ErrorMessage::UserNoLongerExist.to_string()
+    )
+})?;
