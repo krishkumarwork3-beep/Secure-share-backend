@@ -14,3 +14,4 @@ pub async fn decrypt_file(
     &encrypted_aes_key
 )
 .map_err(|e| HttpError::server_error(e.to_string()))?;
+let iv = iv;
