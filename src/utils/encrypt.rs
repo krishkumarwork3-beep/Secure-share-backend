@@ -15,3 +15,5 @@ pub async fn encrypt_file(
     rand::thread_rng().fill(&mut iv);
     let cipher = Cbc::<Aes256, Pkcs7>::new_from_slices(&aes_key, &iv)
     .map_err(|e| HttpError::server_error(e.to_string()))?;
+    let mut buffer = file_data.clone();
+    let encrypted_data = cipher.encrypt_vec(&mut buffer);
