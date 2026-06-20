@@ -64,3 +64,8 @@ let token_details =
         ErrorMessage::UserNoLongerExist.to_string()
     )
 })?;
+req.extensions_mut().insert(
+    JWTAuthMiddeware {
+        user: user.clone(),
+    }
+);
