@@ -35,3 +35,17 @@ let token = cookies.ok_or_else(|| {
         ErrorMessage::TokenNotProvided.to_string()
     )
 })?;
+let token_details =
+    match token::decode_token(
+        token,
+        app_state.env.jwt_secret.as_bytes(),
+    ) {
+        Ok(token_details) => token_details,
+        Err(_) => {
+            return Err(
+                HttpError::unauthorized(
+                    ErrorMessage::InvalidToken.to_string()
+                )
+            );
+        }
+    };
