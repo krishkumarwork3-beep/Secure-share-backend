@@ -8,3 +8,8 @@ pub async fn encrypt_file(
     file_data: Vec<u8>,
     user_public_key: &RsaPublicKey
 ) -> Result<(Vec<u8>, Vec<u8>, Vec<u8>), HttpError> {
+    let mut aes_key = [0u8; 32];
+    let mut iv = [0u8; 16];
+
+    rand::thread_rng().fill(&mut aes_key);
+    rand::thread_rng().fill(&mut iv);
