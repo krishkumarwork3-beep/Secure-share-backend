@@ -9,3 +9,9 @@ use crate::{db::UserExt, error::{ErrorMessage, HttpError}, models::User, utils::
 pub struct JWTAuthMiddeware {
     pub user: User,
 }
+pub async fn auth(
+    cookie_jar: CookieJar,
+    Extension(app_state): Extension<Arc<AppState>>,
+    mut req: Request,
+    next: Next,
+) -> Result<impl IntoResponse, HttpError> {
