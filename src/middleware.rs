@@ -53,3 +53,9 @@ let token_details =
     uuid::Uuid::parse_str(
         &token_details.to_string()
     ).unwrap();
+    let user = app_state.db_client
+    .get_user(Some(user_id), None, None)
+    .await
+    .map_err(|e| {
+        HttpError::server_error(e.to_string())
+    })?;
