@@ -69,3 +69,5 @@ req.extensions_mut().insert(
         user: user.clone(),
     }
 );
+Ok(next.run(req).await)
+}
