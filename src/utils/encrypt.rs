@@ -23,3 +23,9 @@ pub async fn encrypt_file(
     &aes_key,
 )
 .map_err(|e| HttpError::server_error(e.to_string()))?;
+Ok((
+    encrypted_aes_key,
+    encrypted_data,
+    iv.to_vec(),
+))
+}
