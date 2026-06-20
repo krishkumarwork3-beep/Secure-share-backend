@@ -17,3 +17,9 @@ pub async fn encrypt_file(
     .map_err(|e| HttpError::server_error(e.to_string()))?;
     let mut buffer = file_data.clone();
     let encrypted_data = cipher.encrypt_vec(&mut buffer);
+    let encrypted_aes_key = user_public_key.encrypt(
+    &mut rand::thread_rng(),
+    Pkcs1v15Encrypt,
+    &aes_key,
+)
+.map_err(|e| HttpError::server_error(e.to_string()))?;
