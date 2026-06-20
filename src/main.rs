@@ -5,6 +5,7 @@ mod dtos;
 mod error;
 mod db;
 mod utils;
+mod middleware;
 use std::sync::Arc;
 
 use axum::{
