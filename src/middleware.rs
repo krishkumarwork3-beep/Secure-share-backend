@@ -49,3 +49,7 @@ let token_details =
             );
         }
     };
+    let user_id =
+    uuid::Uuid::parse_str(
+        &token_details.to_string()
+    ).unwrap();
