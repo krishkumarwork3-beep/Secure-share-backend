@@ -63,3 +63,9 @@ pub async fn login(
     )
     .map_err(|e| HttpError::server_error(e.to_string()))?;
         if password_matched {
+                    let token = token::create_token(
+            &user.id.to_string(),
+            &app_state.env.jwt_secret.as_bytes(),
+            app_state.env.jwt_maxage
+        )
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
