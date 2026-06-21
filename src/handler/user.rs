@@ -31,3 +31,7 @@ pub fn users_handler() -> Router {
     .route("/password", put(update_user_password))
     .route("/search-emails", get(search_by_email))
 }
+pub async fn get_me(
+    Extension(_app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
+) -> Result<impl IntoResponse, HttpError> {
