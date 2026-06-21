@@ -59,3 +59,10 @@ pub async fn update_user_name(
         uuid::Uuid::parse_str(
             &user.id.to_string()
         ).unwrap();
+    let result = app_state.db_client
+        .update_user_name(
+            user_id.clone(),
+            &body.name
+        )
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
