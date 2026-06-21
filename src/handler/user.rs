@@ -110,3 +110,10 @@ pub async fn update_user_password(
         .update_user_password(user_id.clone(), hashed_password)
         .await
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+    let response = Response {
+        message: "Password updated successfully".to_string(),
+        status: "success",
+    };
+
+    Ok(Json(response))
+}
