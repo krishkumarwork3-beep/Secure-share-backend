@@ -46,3 +46,5 @@ pub async fn login(
     Extension(app_state): Extension<Arc<AppState>>,
     Json(body): Json<LoginUserDto>
 ) -> Result<impl IntoResponse, HttpError> {
+        body.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
