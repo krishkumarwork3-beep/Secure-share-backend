@@ -10,3 +10,7 @@ pub fn auth_handler() -> Router {
         .route("/register", post(register))
         .route("/login", post(login))
 }
+pub async fn register(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<RegisterUserDto>
+) -> Result<impl IntoResponse, HttpError> {
