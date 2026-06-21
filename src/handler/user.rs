@@ -117,3 +117,12 @@ pub async fn update_user_password(
 
     Ok(Json(response))
 }
+
+pub async fn search_by_email(
+    Query(params): Query<SearchQueryByEmailDTO>,
+    Extension(app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
+) -> Result<impl IntoResponse, HttpError> {
+
+    params.validate()
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
