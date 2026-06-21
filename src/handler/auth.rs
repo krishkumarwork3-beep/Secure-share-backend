@@ -62,3 +62,4 @@ pub async fn login(
         &user.password
     )
     .map_err(|e| HttpError::server_error(e.to_string()))?;
+        if password_matched {
