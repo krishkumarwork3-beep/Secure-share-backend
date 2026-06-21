@@ -16,3 +16,5 @@ pub async fn register(
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
     .map_err(|e| HttpError::bad_request(e.to_string()))?;
+   let hash_password = password::hash(&body.password)
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
