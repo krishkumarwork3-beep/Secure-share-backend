@@ -93,3 +93,12 @@ pub async fn login(
         response.headers_mut().extend(headers);
 
         Ok(response)
+            } else {
+        Err(
+            HttpError::bad_request(
+                ErrorMessage::WrongCredentials.to_string()
+            )
+        )
+    }
+
+}
