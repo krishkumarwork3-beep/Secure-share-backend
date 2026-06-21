@@ -45,3 +45,8 @@ pub async fn get_me(
     };
         Ok(Json(response_data))
 }
+pub async fn update_user_name(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
+    Json(body): Json<NameUpdateDto>
+) -> Result<impl IntoResponse, HttpError> {
