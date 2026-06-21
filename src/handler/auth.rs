@@ -24,3 +24,9 @@ pub async fn register(
    match result {
     Ok(user) => {
         let _key_result = generate_key(app_state, user).await?;
+        
+        Ok((StatusCode::CREATED, Json(Response {
+                message: "Registrations successful!".to_string(),
+                status: "success",
+            })))
+        },
