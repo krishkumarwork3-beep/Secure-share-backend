@@ -21,3 +21,5 @@ pub async fn register(
    let result = app_state.db_client
     .save_user(&body.name, &body.email, &hash_password)
     .await;
+   match result {
+    Ok(user) => {
