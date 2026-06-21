@@ -35,4 +35,6 @@ pub async fn register(
         Err(HttpError::unique_constraint_violation(
             ErrorMessage::EmailExist.to_string()
         ))
-    }
+    } else {
+    Err(HttpError::server_error(db_err.to_string()))
+}
