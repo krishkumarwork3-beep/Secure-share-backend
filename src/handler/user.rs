@@ -84,3 +84,5 @@ pub async fn update_user_password(
     Extension(user): Extension<JWTAuthMiddeware>,
     Json(body): Json<UserPasswordUpdateDto>
 ) -> Result<impl IntoResponse, HttpError> {
+    body.validate()
+       .map_err(|e| HttpError::bad_request(e.to_string()))?;
