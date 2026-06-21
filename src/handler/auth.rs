@@ -79,3 +79,7 @@ pub async fn login(
             .max_age(cookie_duration)
             .http_only(true)
             .build();
+        let response = Json(UserLoginResponseDto {
+            status: "success".to_string(),
+            token,
+        });
