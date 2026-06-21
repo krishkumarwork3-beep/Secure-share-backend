@@ -57,3 +57,8 @@ pub async fn login(
             ErrorMessage::WrongCredentials.to_string()
         )
     )?;
+        let password_matched = password::compare(
+        &body.password,
+        &user.password
+    )
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
