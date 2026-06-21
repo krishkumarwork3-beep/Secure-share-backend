@@ -83,3 +83,9 @@ pub async fn login(
             status: "success".to_string(),
             token,
         });
+        let mut headers = HeaderMap::new();
+
+        headers.append(
+            header::SET_COOKIE,
+            cookie.to_string().parse().unwrap()
+        );
