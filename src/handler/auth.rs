@@ -42,3 +42,7 @@ pub async fn register(
 Err(e) => Err(HttpError::server_error(e.to_string()))
 }
 }
+pub async fn login(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Json(body): Json<LoginUserDto>
+) -> Result<impl IntoResponse, HttpError> {
