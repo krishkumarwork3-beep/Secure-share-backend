@@ -69,3 +69,13 @@ pub async fn login(
             app_state.env.jwt_maxage
         )
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+                let cookie_duration =
+            time::Duration::minutes(
+                app_state.env.jwt_maxage * 60
+            );
+
+        let cookie = Cookie::build(("token", token.clone()))
+            .path("/")
+            .max_age(cookie_duration)
+            .http_only(true)
+            .build();
