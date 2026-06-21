@@ -126,3 +126,25 @@ pub async fn search_by_email(
 
     params.validate()
         .map_err(|e| HttpError::server_error(e.to_string()))?;
+        let query_pattern = format!("%{}%", params.query);
+
+    let user_id =
+        uuid::Uuid::parse_str(
+            &user.user.id.to_string()
+        ).unwrap();
+
+    let users = app_state.db_client
+        .search_by_email(user_id.clone(), query_pattern.clone())
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let filtered_email =
+        FilterEmailDto::filter_emails(&users);
+
+    let response_data = EmailListResponseDto {
+        status: "success".to_string(),
+        emails: filtered_email
+    };
+
+    Ok(Json(response_data))
+}
