@@ -86,3 +86,6 @@ pub async fn update_user_password(
 ) -> Result<impl IntoResponse, HttpError> {
     body.validate()
        .map_err(|e| HttpError::bad_request(e.to_string()))?;
+    let user = &user.user;
+
+    let user_id = uuid::Uuid::parse_str(&user.id.to_string()).unwrap();
