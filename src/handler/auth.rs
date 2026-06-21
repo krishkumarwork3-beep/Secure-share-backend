@@ -30,3 +30,9 @@ pub async fn register(
                 status: "success",
             })))
         },
+        Err(sqlx::Error::Database(db_err)) => {
+    if db_err.is_unique_violation() {
+        Err(HttpError::unique_constraint_violation(
+            ErrorMessage::EmailExist.to_string()
+        ))
+    }
