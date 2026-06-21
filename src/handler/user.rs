@@ -37,3 +37,9 @@ pub async fn get_me(
 ) -> Result<impl IntoResponse, HttpError> {
         let filtered_user =
         FilterUserDto::filter_user(&user.user);
+        let response_data = UserResponseDto {
+        status: "success".to_string(),
+        data: UserData {
+            user: filtered_user,
+        },
+    };
