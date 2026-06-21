@@ -43,3 +43,5 @@ pub async fn get_me(
             user: filtered_user,
         },
     };
+        Ok(Json(response_data))
+}
