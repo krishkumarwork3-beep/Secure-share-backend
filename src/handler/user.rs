@@ -21,3 +21,4 @@ use crate::{
     utils::password,
     AppState
 };
+pub fn users_handler() -> Router {
