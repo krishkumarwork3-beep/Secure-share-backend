@@ -38,3 +38,7 @@ pub async fn register(
     } else {
     Err(HttpError::server_error(db_err.to_string()))
 }
+        }
+Err(e) => Err(HttpError::server_error(e.to_string()))
+}
+}
