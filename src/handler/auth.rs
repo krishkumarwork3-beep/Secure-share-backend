@@ -23,3 +23,4 @@ pub async fn register(
     .await;
    match result {
     Ok(user) => {
+        let _key_result = generate_key(app_state, user).await?;
