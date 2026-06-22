@@ -6,6 +6,7 @@ mod error;
 mod db;
 mod utils;
 mod middleware;
+mod router;
 use std::sync::Arc;
 
 use axum::{
