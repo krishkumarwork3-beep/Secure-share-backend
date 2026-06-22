@@ -137,3 +137,47 @@ pub async fn upload_file(
         file_data,
         &public_key_pem
     ).await?;
+
+        let user_id =
+        uuid::Uuid::parse_str(
+            &user.user.id.to_string()
+        ).unwrap();
+
+    let hash_password = password::hash(&form_data.password)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let expiration_date =
+        DateTime::parse_from_rfc3339(
+            &form_data.expiration_date
+        )
+        .map_err(|e| HttpError::server_error(e.to_string()))?
+        .with_timezone(&Utc);
+
+    let recipient_user_id =
+        uuid::Uuid::parse_str(
+            &recipient_user.id.to_string()
+        ).unwrap();
+
+    app_state.db_client
+        .save_encrypted_file(
+            user_id.clone(),
+            file_name,
+            file_size,
+            recipient_user_id,
+            hash_password,
+            expiration_date,
+            encrypted_aes_key,
+            encrypted_data,
+            iv,
+        )
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let response = ResponseDto {
+        message: "File uploaded and encrypted successfully"
+            .to_string(),
+        status: "success",
+    };
+
+    Ok(Json(response))
+}
