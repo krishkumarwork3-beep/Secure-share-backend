@@ -34,3 +34,5 @@ pub fn create_router(app_state: Arc<AppState>) -> Router {
         )
         .layer(TraceLayer::new_for_http())
         .layer(Extension(app_state));
+        Router::new().nest("/api", api_route)
+}
