@@ -181,3 +181,71 @@ pub async fn upload_file(
 
     Ok(Json(response))
 }
+
+pub async fn retrieve_file(
+    Extension(app_state): Extension<Arc<AppState>>,
+    Extension(user): Extension<JWTAuthMiddeware>,
+    Json(body): Json<RetrieveFileDto>
+) -> Result<impl IntoResponse, HttpError> {
+
+    body.validate()
+        .map_err(|e| HttpError::bad_request(e.to_string()))?;
+
+    let user_id =
+        uuid::Uuid::parse_str(
+            &user.user.id.to_string()
+        ).unwrap();
+
+    let shared_id =
+        uuid::Uuid::parse_str(
+            &body.shared_id.to_string()
+        ).unwrap();
+
+    let shared_result = app_state.db_client
+        .get_shared(shared_id.clone(), user_id.clone())
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let shared_data = shared_result.ok_or_else(|| {
+        HttpError::bad_request(
+            "The requested shared link either does not exist or has expired."
+                .to_string()
+        )
+    })?;
+
+    let match_password =
+        password::compare(
+            &body.password,
+            &shared_data.password
+        )
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    if !match_password {
+        return Err(HttpError::bad_request(
+            "The provided password is incorrect."
+                .to_string()
+        ));
+    }
+
+    let file_id = match shared_data.file_id {
+        Some(id) => id,
+        None => {
+            return Err(
+                HttpError::bad_request(
+                    "File ID is missing".to_string()
+                )
+            );
+        }
+    };
+
+    let file_result = app_state.db_client
+        .get_file(file_id.clone())
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let file_data = file_result.ok_or_else(|| {
+        HttpError::bad_request(
+            "The requested file either does not exist or has expired."
+                .to_string()
+        )
+    })?;
