@@ -45,3 +45,8 @@ use crate::{
     },
     AppState,
 };
+pub fn file_handle() -> Router {
+    Router::new()
+        .route("/upload", post(upload_file))
+        .route("/retrieve", post(retrieve_file))
+}
