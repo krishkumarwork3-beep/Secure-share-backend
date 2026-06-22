@@ -7,6 +7,7 @@ mod db;
 mod utils;
 mod middleware;
 mod router;
+mod handler;
 use std::sync::Arc;
 
 use axum::{
