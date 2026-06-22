@@ -97,6 +97,12 @@ pub async fn update_user_password(
         .ok_or(HttpError::unauthorized(
             ErrorMessage::InvalidToken.to_string()
         ))?;
+
+    let password_match = password::compare(
+        &body.old_password,
+        &user.password 
+    )
+    .map_err(|e| HttpError::server_error(e.to_string()))?;
     if !password_match {
         return Err(
             HttpError::bad_request(
