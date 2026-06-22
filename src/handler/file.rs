@@ -249,3 +249,39 @@ pub async fn retrieve_file(
                 .to_string()
         )
     })?;
+
+        let mut path = PathBuf::from("assets/private_keys");
+    path.push(format!("{}.pem", user_id.clone()));
+
+    let private_key = fs::read_to_string(&path)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let private_key_pem =
+        RsaPrivateKey::from_pkcs1_pem(&private_key)
+            .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let decrypted_file = decrypt_file(
+        file_data.encrypted_aes_key,
+        file_data.encrypted_file,
+        file_data.iv,
+        &private_key_pem
+    ).await?;
+
+    let response = Response::builder()
+        .status(StatusCode::OK)
+        .header(
+            "Content-Disposition",
+            format!(
+                "attachment; filename=\"{}\"",
+                file_data.file_name
+            )
+        )
+        .header(
+            "Content-Type",
+            "application/octet-stream"
+        )
+        .body(Body::from(decrypted_file))
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    Ok(response)
+}
