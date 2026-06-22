@@ -97,3 +97,43 @@ pub async fn upload_file(
 
     form_data.validate()
         .map_err(|e| HttpError::bad_request(e.to_string()))?;
+        let recipient_result = app_state.db_client
+        .get_user(None, None, Some(&form_data.recipient_email))
+        .await
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let recipient_user = recipient_result
+        .ok_or(HttpError::bad_request(
+            "Recipient user not found"
+        ))?;
+
+    let public_key_str = match &recipient_user.public_key {
+        Some(key) => key,
+        None => {
+            return Err(
+                HttpError::bad_request(
+                    "Recipient user has no public key"
+                )
+            )
+        }
+    };
+
+    let public_key_bytes = STANDARD
+        .decode(public_key_str)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let public_key = String::from_utf8(public_key_bytes)
+        .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let public_key_pem =
+        RsaPublicKey::from_pkcs1_pem(&public_key)
+            .map_err(|e| HttpError::server_error(e.to_string()))?;
+
+    let (
+        encrypted_aes_key,
+        encrypted_data,
+        iv
+    ) = encrypt_file(
+        file_data,
+        &public_key_pem
+    ).await?;
